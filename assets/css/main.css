@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+/* header @ small screens */
+header {
+  height: 100vh;
+  width: 100vw;
+  background: #878787;
+}
+
+header > p,
+header > div,
+.section-1 > *,
+.map *,
+footer * {
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+header .logo {
+  font-family: "Orbitron", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding-top: 50px;
+  text-align: left;
+  color: #fff;
+}
+.soon {
+  height: 144px;
+  width: 144px;
+  background: #979797;
+  border-radius: 50%;
+  line-height: 144px;
+  text-align: center;
+}
+.coming,
+.soon {
+  display: inline-block;
+  color: #bfc6c6;
+  font-size: 40px;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  padding: auto;
+  margin: 20px auto;
+}
+.wc-tease h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  color: #fff;
+}
+.wc-tease p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  font-family: "open sans";
+}
+.get-notify h4 {
+  color: #c5c5c5;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-transform: capitalize;
+  padding: 15px 0;
+}
+form input {
+  height: 41px;
+  font-size: 16px;
+  line-height: 17px;
+  margin-top: 15px;
+}
+input[type="email"] {
+  padding-right: 6px;
+  background: #c4c4c4;
+  border: none;
+}
+input[type="submit"] {
+  width: 114px;
+  text-transform: uppercase;
+  background: #444040;
+  color: #fff;
+  margin-right: 1px;
+}
+input::placeholder {
+  color: #000;
+  padding-left: 10px;
+  font-size: 14px;
+}
+input:-ms-input-placeholder {
+  color: #000;
+}
+
+/* other sections at small screens */
+
+.section-1 {
+  background: #e5e5e5;
+  text-align: center;
+}
+.section-1 h2,
+.section-1 p {
+  color: #000;
+}
+.section-1 h2 {
+  font-size: 24px;
+  line-height: 36px;
+  font-family: "Oswald", sans-serif;
+  padding-top: 40px;
+  color: #000;
+}
+.section-1 p {
+  font-size: 14px;
+  line-height: 28px;
+  width: 312px;
+  margin: auto;
+  padding: 15px 0 5px 0;
+}
+.img-cover {
+  border: 3px solid #000;
+  width: 200px;
+  margin: auto;
+  /* position: relative;
+    z-index: 100; */
+}
+.img-cover p {
+  height: 10px;
+  background: #000;
+  width: 50%;
+  margin: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+  z-index: 20;
+}
+.img-cover img {
+  margin-top: -13px;
+}
+.section-icon {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  background: #c5c5c5;
+  margin: 20px auto;
+}
+.teaser-layer-2 h2 {
+  color: #fff;
+  font-size: 18px;
+  line-height: 27px;
+}
+.teaser-layer-2 h2 {
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+}
+.last-of-type {
+  padding-bottom: 30px;
+}
+/* mirror image */
+.mi-1 {
+  margin-right: 20%;
+}
+.mi-2 {
+  margin-left: 50%;
+  margin-top: 20px;
+}
+.img-mirror {
+  margin-top: 20px;
+}
+
+/* map */
+.map {
+  padding-top: 50px;
+  z-index: -10;
+  position: relative;
+}
+.map .map-img {
+  /* margin-top: -600px; */
+  position: absolute;
+  z-index: 100;
+  /* height: 350px; */
+  right: 22%;
+  top: 100px;
+  opacity: 0.8;
+}
+footer {
+  margin: 40px 0 0 0;
+  padding-bottom: 40px;
+  background: #c4c4c4;
+}
+footer h3 {
+  font-size: 24px;
+  line-height: 36px;
+  font-family: "Oswald";
+  text-align: center;
+  padding: 40px 0 0 0;
+}
+#footer h4 {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Open sans";
+  text-align: center;
+  padding: 20px 0;
+  color: #000;
+}
+#footer form {
+  padding-bottom: 40px;
+}
+/* media queries */
+@media screen and (max-width: 360px) {
+  input[type="email"] {
+    width: 180px;
+  }
+  input[type="submit"] {
+    width: 100px;
+  }
+  form input {
+    height: 41px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  #footer form {
+    max-width: 100%;
+    /* margin: auto; */
+  }
+}
+
+@media screen and (min-width: 760px) {
+  body {
+    overflow-x: hidden;
+  }
+  header{
+      height: 90vh;
+  }
+  header > p,
+  header > div,
+  .section-1 > *,
+  .map *,
+  footer * {
+    max-width: 65%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .coming,
+  .soon {
+    font-size: 60px;
+    margin: 20px;
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .img-cover-wrapper{
+      display: none;
+  }
+  .layer-flex{
+      max-width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+  }
+  .layer-left,
+  .layer-middle,
+  .layer-right{
+      flex: 0 0 auto;
+  }
+  
+}
