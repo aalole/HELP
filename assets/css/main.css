@@ -5,67 +5,187 @@
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
 }
-/* header @ small screens */
-header {
-  height: 100vh;
-  width: 100vw;
-  background: #878787;
+
+/* ############################ PRELOADER STYLE ######################## */
+
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  background: #fff;
+}
+.loader-bg-rm{
+  display: none;
 }
 
+.loader {
+  width: 150px;
+  height: 150px;
+  background: 1px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  border-radius: 50%;
+  border: 1em solid #ff5733;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+
+.loader:before {
+  animation-delay: .5s;
+}
+
+@keyframes loader {
+  0% {
+      opacity: 0;
+      transform: scale(0);
+  }
+
+  50% {
+
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+      transform: scale(1);
+  }
+
+}
+/* header @ small screens */
+header {
+  height: auto;
+  width: 100vw;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(229, 229, 229, 0.4),
+      rgba(229, 229, 229, 0.4)
+    ),
+    url("./../img/current-bcg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* #################### COMMON RULES TO ALL SECTIONS ####################*/
 header > p,
 header > div,
 .section-1 > *,
 .map *,
-footer * {
+footer *,
+.img-mirror-inner,
+.wrapping-up .touch {
   max-width: 90%;
   margin: 0 auto;
   text-align: center;
 }
+/* .wrapping-up * {
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+} */
+
+/* #################### COMMON RULES TO ALL SECTIONS  ENDS####################*/
+
+/* #################### HEADER STARTS####################*/
 header .logo {
   font-family: "Orbitron", sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
   padding-top: 50px;
   text-align: left;
-  color: #fff;
+  color: #250f0a;
 }
 .soon {
   height: 144px;
   width: 144px;
-  background: #979797;
+  background: #fff;
   border-radius: 50%;
   line-height: 144px;
   text-align: center;
+  animation-name: enterFromRight;
+  animation-duration: 4s;
+}
+.coming {
+  animation-name: enterFromLeft;
+  animation-duration: 4s;
 }
 .coming,
 .soon {
   display: inline-block;
-  color: #bfc6c6;
+  color: #250f0a;
   font-size: 40px;
   font-family: "Oswald";
   text-transform: uppercase;
   padding: auto;
-  margin: 20px auto;
+  margin: 5px;
+}
+
+@keyframes enterFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  50% {
+    transform: translate(-10px);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes enterFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  65% {
+    transform: translate(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 .wc-tease h3 {
   font-size: 18px;
   font-weight: 600;
   line-height: 27px;
-  color: #fff;
+  color: #250f0a;
+  font-family: "Open Sans", sans-serif;
 }
 .wc-tease p {
   font-size: 16px;
   line-height: 24px;
-  color: #fff;
-  font-family: "open sans";
+  color: #5b4744;
+  font-family: "Open Sans", sans-serif;
+  padding-top: 20px;
+  font-weight: normal;
 }
 .get-notify h4 {
-  color: #c5c5c5;
+  color: #250f0a;
   font-size: 24px;
   font-weight: 500;
   line-height: 36px;
   text-transform: capitalize;
   padding: 15px 0;
+  font-family: "Oswald", sans-serif;
+}
+form {
+  padding-bottom: 40px;
 }
 form input {
   height: 41px;
@@ -75,40 +195,52 @@ form input {
 }
 input[type="email"] {
   padding-right: 6px;
-  background: #c4c4c4;
-  border: none;
+  background: #e7eaea;
+  border: 1px solid rgba(37, 15, 10, 0.1);
 }
 input[type="submit"] {
   width: 114px;
   text-transform: uppercase;
-  background: #444040;
+  background: #bf1526;
   color: #fff;
-  margin-right: 1px;
+  /* margin-right: 1px; */
 }
 input::placeholder {
-  color: #000;
+  color: #5b4744;
   padding-left: 10px;
   font-size: 14px;
 }
 input:-ms-input-placeholder {
-  color: #000;
+  color: #5b4744;
 }
+/* #################### HEADER ENDS ####################*/
 
-/* other sections at small screens */
+/* #################### other sections at small screens ####################*/
 
 .section-1 {
-  background: #e5e5e5;
+  background: #fff;
   text-align: center;
+  padding: 30px 0;
 }
+.section-1 h1,
 .section-1 h2,
 .section-1 p {
   color: #000;
+}
+
+.section-1 h1 {
+  padding-top: 40px;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  font-family: "Oswald", sans-serif;
 }
 .section-1 h2 {
   font-size: 24px;
   line-height: 36px;
   font-family: "Oswald", sans-serif;
-  padding-top: 40px;
+  padding-top: 20px;
   color: #000;
 }
 .section-1 p {
@@ -116,79 +248,104 @@ input:-ms-input-placeholder {
   line-height: 28px;
   width: 312px;
   margin: auto;
-  padding: 15px 0 5px 0;
+  padding: 15px 0;
 }
-.img-cover {
-  border: 3px solid #000;
-  width: 200px;
+.img-cover-wrapper img {
+  display: block;
+  width: 150px;
+  height: 310px;
   margin: auto;
-  /* position: relative;
-    z-index: 100; */
 }
-.img-cover p {
-  height: 10px;
-  background: #000;
-  width: 50%;
-  margin: auto;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  position: relative;
-  z-index: 20;
-}
-.img-cover img {
-  margin-top: -13px;
-}
+
 .section-icon {
   height: 64px;
   width: 64px;
   border-radius: 50%;
   background: #c5c5c5;
-  margin: 20px auto;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+.fa-user-friends,
+.fa-eye,
+.fa-broadcast-tower,
+.fa-map-marker-alt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: dodgerblue;
+  font-size: 22px;
+}
+.fa-broadcast-tower {
+  color: #5b4744;
+}
+.fa-user-friends {
+  color: #bf1526;
+}
+.fa-map-marker-alt {
+  color: #250f0a;
 }
 .teaser-layer-2 h2 {
-  color: #fff;
+  color: #000;
   font-size: 18px;
   line-height: 27px;
-}
-.teaser-layer-2 h2 {
-  color: #fff;
-  font-size: 16px;
-  line-height: 24px;
 }
 .last-of-type {
   padding-bottom: 30px;
 }
-/* mirror image */
-.mi-1 {
-  margin-right: 20%;
-}
-.mi-2 {
-  margin-left: 50%;
-  margin-top: 20px;
-}
+/* mirror image  section*/
+/* ##################### MIRROR IMAGE SECTION STARTS ####################*/
 .img-mirror {
-  margin-top: 20px;
+  height: 795px;
+  background: #becdd3;
+  position: relative;
+}
+.img-mirror img {
+  height: 350px;
+  width: 200px;
+  border-radius: 10px;
+}
+.img-mirror-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* map */
+.art-1 {
+  margin-left: -160px;
+}
+.art-2 {
+  margin-left: 160px;
+}
+.layer-middle {
+  display: none;
+}
+
+/* #################### MIRROR IMAGE ENDS####################*/
+
+
+/* #################### MAP STARTS ####################*/
 .map {
   padding-top: 50px;
   z-index: -10;
   position: relative;
 }
 .map .map-img {
-  /* margin-top: -600px; */
-  position: absolute;
-  z-index: 100;
-  /* height: 350px; */
-  right: 22%;
-  top: 100px;
   opacity: 0.8;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+/* #################### map ENDS ####################*/
+
+/* #################### FOOTER STARTS ####################*/
 footer {
   margin: 40px 0 0 0;
   padding-bottom: 40px;
-  background: #c4c4c4;
+  background: #BECDD3;
 }
 footer h3 {
   font-size: 24px;
@@ -208,7 +365,17 @@ footer h3 {
 #footer form {
   padding-bottom: 40px;
 }
+.wrapping-up {
+  margin-top: 40px;
+  margin-bottom: -60px;
+  position: relative;
+  z-index: -10
+}
+
 /* media queries */
+/* #################### FOOTER ENDS  ####################*/
+
+/* #################### FORM FIELDS WHEN SCREEN SIZE IS LESS THAN 360PX ####################*/
 @media screen and (max-width: 360px) {
   input[type="email"] {
     width: 180px;
@@ -223,49 +390,95 @@ footer h3 {
   }
   #footer form {
     max-width: 100%;
-    /* margin: auto; */
+
+  }
+  .img-mirror img{
+    width: 140px;
+    height: 250px
+  }
+  .touch img{
+    display: inline-block;
+    width: 140px!important;
   }
 }
 
+/* #################### STYLE RULES FOR DESKTOP AND TABLET ####################*/
 @media screen and (min-width: 760px) {
   body {
     overflow-x: hidden;
   }
-  header{
-      height: 90vh;
+  header {
+    height: 90vh;
   }
-  header > p,
-  header > div,
-  .section-1 > *,
-  .map *,
-  footer * {
-    max-width: 65%;
-    margin: 0 auto;
-    text-align: center;
+  .banner-wc-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .coming,
   .soon {
-    font-size: 60px;
-    margin: 20px;
+    font-size: 50px;
+    letter-spacing: 3px;
+  }
+  .Soon {
+    height: 300px;
+    width: 300px;
   }
   .logo {
     font-size: 24px;
   }
-  .img-cover-wrapper{
-      display: none;
+  .img-cover-wrapper {
+    display: none;
   }
-  .layer-flex{
-      max-width: 80%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+  .wc-tease h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .wc-tease p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .get-notify h4 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .layer-flex {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .layer-middle {
+    display: block;
+  }
+  .layer-middle img {
+    width: 180px;
+    height: 400px;
+    display: block;
+    margin: auto;
   }
   .layer-left,
   .layer-middle,
-  .layer-right{
-      flex: 0 0 auto;
+  .layer-right {
+    flex: 0 0 auto;
+    align-self: center;
   }
-  
+
+  /* .img-mirror{
+    height: 100vh;
+    background: url("./../img/phone-bg-big.PNG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+  .map * {
+    max-width: 100%;
+  }
+  .map iframe {
+    width: 100%;
+    border: 1px solid #777;
+  }
 }
